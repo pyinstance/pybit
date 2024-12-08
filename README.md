@@ -1,4 +1,4 @@
-![Pybit](https://imgur.com/a/D4wYKxK)
+![Pybit](https://i.imgur.com/NvN7vVn.png)
 
 **PyBit** is a powerful, Python-based tool for detecting and protecting against Discord-related malware before it can be executed. It automatically detects malicious webhooks, decompiles both executable files and `.pyc` files, and provides a clear insight into the inner workings of potentially dangerous files. This tool is designed for developers, security professionals, and anyone who wants to ensure the integrity and safety of their systems by inspecting and mitigating malware threats.
 
