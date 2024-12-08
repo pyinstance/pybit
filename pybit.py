@@ -16,6 +16,25 @@ logging.getLogger('tensorflow').setLevel(logging.ERROR)
 logging.getLogger('usb_service_win').setLevel(logging.CRITICAL)
 logging.getLogger().setLevel(logging.CRITICAL)
 
+
+DISCORD_CLIENT_ID = '1314848998871404554'
+
+# Initialize Discord Rich Presence
+try:
+    rpc = Presence(DISCORD_CLIENT_ID)
+    rpc.connect()
+    rpc.update(
+        state="Analyzing malware...",
+        details="Preparing for analysis",
+        large_image="pybit",
+        large_text="PyBit Malware Detector",
+        start=time.time(),
+    )
+except Exception as e:
+    pass
+
+
+
 def betterprint(message, color="white"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     color_codes = {
