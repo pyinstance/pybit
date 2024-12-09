@@ -1,39 +1,32 @@
-from libs.libs import *
+from libs.libs      import *
 from modules.colors import *
 
+# Configure logging
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 sys.stderr = open(os.devnull, 'w')
-
 logs_folder = "logs"
 if not os.path.exists(logs_folder):
     os.makedirs(logs_folder)
-
 log_file_path = os.path.join(logs_folder, 'processes.log')
-
 logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(asctime)s - %(message)s')
-
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
 logging.getLogger('usb_service_win').setLevel(logging.CRITICAL)
 logging.getLogger().setLevel(logging.CRITICAL)
 
-
+# Discord Rich Presence
 DISCORD_CLIENT_ID = '1314848998871404554'
-
-# Initialize Discord Rich Presence
 try:
     rpc = Presence(DISCORD_CLIENT_ID)
     rpc.connect()
     rpc.update(
         state="Analyzing malware...",
-        details="Preparing for analysis",
+        details=".gg/",
         large_image="pybit",
         large_text="PyBit Malware Detector",
         start=time.time(),
     )
 except Exception as e:
     pass
-
-
 
 def betterprint(message, color="white"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -51,21 +44,15 @@ def betterprint(message, color="white"):
     color_code = color_codes.get(color, "\033[0m")
     print(f"{color_code}[{timestamp}] {message}\033[0m")
 
-def globtextt(driver):
-    try:
-        log_box = WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.ID, "logBox"))
-        )
-        log_text = log_box.get_attribute("value")
-        betterprint(f"Log Output:\n{log_text}", "blue")
-    except Exception as e:
-        betterprint(f"Error grabbing log text: {e}", "red")
+def detect_token(file_content):
+    # Regex pattern to match Discord bot tokens
+    token_pattern = r"[A-Za-z0-9_-]{24}\.[A-Za-z0-9_-]{6}\.[A-Za-z0-9_-]{27}"
+    return re.findall(token_pattern, file_content)
 
 def save_file_to_family(file_name, family_name):
     families_folder = "families"
     if not os.path.exists(families_folder):
         os.makedirs(families_folder)
-
     family_file_path = os.path.join(families_folder, f"{family_name}.json")
     
     if os.path.exists(family_file_path):
@@ -103,7 +90,6 @@ def decomppyc():
     try:
         choice = int(input("└———> Choose a .pyc file by number to decompile: ")) - 1
         if choice < 0 or choice >= len(pyc_files):
-            betterprint(f"└———> Invalid choice.", "red")
             return
 
         pyc_file = pyc_files[choice]
@@ -119,6 +105,16 @@ def decomppyc():
             result = subprocess.run(["util/pycdas", pyc_file_path], stdout=log, stderr=log)
 
         if result.returncode == 0:
+            with open(pyc_file_path, 'rb') as f:
+                file_content = f.read().decode(errors='ignore')
+            
+            tokens = detect_token(file_content)
+            if tokens:
+                for token in tokens:
+                    betterprint(f"Detected bot token: {token}", "magenta")
+            else:
+                betterprint("No bot token detected in this file.", "yellow")
+            
             betterprint(f"└———> Successfully decompiled {pyc_file}. Output saved in {log_file}", "green")
         else:
             betterprint(f"└———> Error during decompilation of {pyc_file}. Check the log for details.", "red")
@@ -143,7 +139,6 @@ def webhookfinder(log_file):
             betterprint(f"Found Discord Webhook: {webhook}", "cyan")
     else:
         betterprint("No Discord webhook found in the log file.", "yellow")
-os.system('cls')
 print(water("""
                      __        __    __     
                     /  |      /  |  /  |    
@@ -170,7 +165,6 @@ if not os.path.exists(file_path):
     exit()
 
 family_name = input("└———> Enter the family name you'd like to put the executable under: ")
-
 save_file_to_family(file_path, family_name)
 
 options = webdriver.ChromeOptions()
