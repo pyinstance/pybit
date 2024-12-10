@@ -7,21 +7,18 @@ try:
     from tqdm import tqdm
     from termcolor import colored
     from jinja2 import Template
-    import validators  # Import a URL validation library
+    import validators
 except Exception as e:
     print(f"{e}")
     os.system("pip install -r assets/requirements.txt")
     os.system("cls")
 
-# Function to print messages with a timestamp and color
 def pwc(message, color="white"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     colored_message = colored(f'[{timestamp}] {message}', color)
     print(colored_message)
 
-# Function to decompile a .pyc file using pycdas and pycdc
 def decomp(file_path):
-    # Extract the filename without extension
     file_name = os.path.splitext(os.path.basename(file_path))[0]
     
     # Log files
@@ -41,7 +38,6 @@ def decomp(file_path):
         pwc(f'Error: pycdc executable not found at {pycdc_executable}', 'red')
         return None, None
     
-    # Decompile using pycdas with a loading bar
     pwc("Decompiling using pycdas...", 'blue')
     with tqdm(total=100, desc="Decompiling using pycdas", unit="%") as pbar:
         try:
@@ -53,7 +49,6 @@ def decomp(file_path):
             pwc(f"Error during pycdas decompilation: {e}", 'red')
             return None, None
     
-    # Decompile using pycdc with a loading bar
     pwc("Decompiling using pycdc...", 'green')
     with tqdm(total=100, desc="Decompiling using pycdc", unit="%") as pbar:
         try:
@@ -67,7 +62,6 @@ def decomp(file_path):
 
     return pycdas_log, pycdc_log
 
-# Function to scan log files for webhooks, bot tokens, and other URLs
 def scan_logs_for_urls(log_files):
     url_regex = r'https?://[^\s/$.?#].[^\s]*|discord(?:app)?\.com/api/webhooks/\d+/[a-zA-Z0-9-]+|bot[o0]ken=[a-zA-Z0-9_-]+'
     results = []
@@ -79,11 +73,10 @@ def scan_logs_for_urls(log_files):
             urls = re.findall(url_regex, content)
             if urls:
                 for url in urls:
-                    if validators.url(url):  # Check if the URL is valid
+                    if validators.url(url):
                         results.append(url)
                         pwc(f'Found URL: {url}', 'green')
                     else:
-                        # Skip invalid URLs without printing them
                         continue
             else:
                 pwc(f'No URLs found in {log_file}.', 'white')
