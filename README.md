@@ -16,9 +16,10 @@
 ---
 
 ## Screenshots
-
-![PyBit Screenshot](https://i.imgur.com/Y8JVp0e.png)
-![Decompiled Code Log](https://i.imgur.com/WG8AkeS.png)
+# Improved Terminal for v1.2
+![PyBit Screenshot](https://i.imgur.com/vIG27Re.png)
+# HTML report of decompiled Pycfile for v1.2
+![Decompiled Code Log](https://i.imgur.com/xsZA1gp.png)
 
 *Above: Example of PyBit scanning an executable file for malicious code.*
 
