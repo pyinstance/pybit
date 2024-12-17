@@ -11,7 +11,7 @@ from jinja2 import Template
 
 
 # replace with your webhook this is for notifications for decompiled stubs ect
-WEBHOOK_URL = 'https://discord.com/api/webhooks/1318357611636195390/2z8f7npvnEPW6AxreupOg8_H3qUZHXM6eKGj3rrYLBqrMtVo-Iv4AJg2hfL_6YG8oD7e'
+WEBHOOK_URL = 'webhook'
 
 def pwc(message, color="white"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
