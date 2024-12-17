@@ -1,0 +1,18 @@
+{
+    "SUSPICIOUS_CONSTANTS": [
+      "WEBHOOK_URL",
+      "webhook"
+    ],
+    "SUSPICIOUS_FUNCTIONS": [
+      "injection",
+      "vealol",
+      "get_passwords",
+      "get_system_info",
+      "grabber",
+      "grabTokens"
+    ],
+    "SUSPICIOUS_KEYWORDS": [
+      "eval", "exec", "subprocess", "os.system", "import socket", "import requests",
+      "import urllib", "open(", "os.popen", "getattr", "input(", "os.fork", "import ftplib"
+    ]
+  }
