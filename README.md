@@ -44,10 +44,4 @@ If you don't have Python installed, download it from the official website:
 
 [Download Python 3.11.0](https://www.python.org/downloads/release/python-3110/)
 
-### Step-by-Step Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/your-username/pybit.git
-   cd pybit
+[Visit the official site and read the docs](https://pybit.lol/external/api/docs)
