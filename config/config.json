@@ -1,0 +1,57 @@
+{
+  "SUSPICIOUS_CONSTANTS": [
+      "WEBHOOK_URL",
+      "webhook"
+  ],
+  "SUSPICIOUS_FUNCTIONS": [
+      "injection",
+      "Injection",
+      "Inject",
+      "inject",
+      "vealol",
+      "get_passwords",
+      "get_system_info",
+      "grabber",
+      "grabTokens"
+  ],
+  "SUSPICIOUS_KEYWORDS": [
+      "eval", "exec", "subprocess", "os.system", "import socket", "import requests",
+      "import urllib", "open(", "os.popen", "getattr", "input(", "os.fork", "import ftplib"
+  ],
+  "SUSPICIOUS_REG_KEYS": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ShellExecuteHooks",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment",
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\FilePaths"
+  ],
+ " MALICIOUS_REGISTRY_KEYS": [
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableTaskMgr",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows Defender\\DisableAntiSpyware",
+      "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableLUA ",
+      "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections",
+      "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Lsa\\DisableDomainCreds",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSecurityTab",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows Defender\\DisableAntiVirus",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows Defender\\SignatureUpdates",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoWindowsUpdate",
+      "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\ShowAdminDems",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ProxyServer",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\  ",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MpsSvc\\Start",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisableAntiSpyware ",
+      "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\InactivityTimeoutSecs",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\Security\\Start"
+    ]
+
+}

@@ -1,0 +1,40 @@
+{
+    "paths": {
+        "Discord": "C:\\Users\\User\\AppData\\Roaming\\discord",
+        "Discord Canary": "C:\\Users\\User\\AppData\\Roaming\\discordcanary",
+        "Lightcord": "C:\\Users\\User\\AppData\\Roaming\\Lightcord",
+        "Discord PTB": "C:\\Users\\User\\AppData\\Roaming\\discordptb",
+        "Opera GX": "C:\\Users\\User\\AppData\\Roaming\\Opera Software\\Opera GX Stable",
+        "Chrome": "C:\\Users\\User\\Local\\Google\\Chrome\\User Data\\Default",
+        "Microsoft Edge": "C:\\Users\\User\\Local\\Microsoft\\Edge\\User Data\\Default",
+        "Firefox": "C:\\Users\\User\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles",
+        "Brave": "C:\\Users\\User\\Local\\BraveSoftware\\Brave-Browser\\User Data",
+        "Safari": "C:\\Users\\User\\AppData\\Local\\Apple Computer\\Safari\\Safari",
+        "Vivaldi": "C:\\Users\\User\\Local\\Vivaldi\\User Data",
+        "Yandex": "C:\\Users\\User\\AppData\\Roaming\\Yandex\\YandexBrowser\\User Data",
+        "Edge Legacy": "C:\\Users\\User\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE",
+        "Epic Privacy Browser": "C:\\Users\\User\\Local\\Epic Privacy Browser\\User Data",
+        "SlimJet": "C:\\Users\\User\\Local\\SlimJet\\User Data",
+        "Comodo Dragon": "C:\\Users\\User\\Local\\Comodo\\Dragon\\User Data",
+        "CyberFox": "C:\\Users\\User\\AppData\\Roaming\\CyberFox\\CyberFox\\Profiles",
+        "Opera": "C:\\Users\\User\\AppData\\Roaming\\Opera Software\\Opera Stable"
+    },
+    "suspicious_directories": [
+        "\\Google\\Chrome\\User Data", 
+        "\\Opera Software\\Opera Stable",
+        "\\Discord", 
+        "\\DiscordCanary", 
+        "\\Microsoft\\Edge",
+        "\\Mozilla\\Firefox\\Profiles", 
+        "\\BraveSoftware\\Brave-Browser\\User Data",
+        "\\Apple Computer\\Safari", 
+        "\\Vivaldi", 
+        "\\Yandex",
+        "\\Microsoft\\Windows\\INetCache\\IE", 
+        "\\Epic Privacy Browser\\User Data",
+        "\\SlimJet\\User Data", 
+        "\\Comodo\\Dragon\\User Data", 
+        "\\CyberFox\\CyberFox\\Profiles",
+        "\\Opera Software\\Opera Stable"
+    ]
+}

@@ -1,0 +1,5 @@
+tqdm
+termcolor
+jinja2
+validators
+yara

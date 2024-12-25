@@ -1,0 +1,1 @@
+start pip install -r assets/requirements.txt

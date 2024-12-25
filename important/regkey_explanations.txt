@@ -1,0 +1,75 @@
+Down below is an explination on why these reg keys are classed as 'Malicious'
+please read carefully and take these in
+Lots of love pyinstance <33
+
+
+# Disable Task Manager
+r'HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableTaskMgr\s*=\s*1',
+
+# Startup entries (user-specific)
+r'HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\\S+',
+
+# Startup entries (local machine)
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\\S+',
+
+# RunOnce entries (local machine)
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\\S+',
+
+# Disable Windows Defender
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows Defender\\DisableAntiSpyware\s*=\s*1',
+
+# Firewall modifications (disabling firewall)
+r'HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\\S+',
+
+# Disable User Account Control (UAC)
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableLUA\s*=\s*0',  # Disable UAC
+
+# Remote Desktop modifications
+r'HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections\s*=\s*1',  # Disable Remote Desktop
+
+# Modify LSA (Local Security Authority) to allow clear text passwords
+r'HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Lsa\\DisableDomainCreds\s*=\s*1',  # Disabling LSA credential caching
+
+# Modify Windows Security settings to weaken security
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSecurityTab\s*=\s*1',  # Hide the Security tab in file properties
+
+# Disabling Windows Defender (by disabling the service)
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows Defender\\DisableAntiVirus\s*=\s*1',  # Disable Antivirus
+
+# Disable Windows Defender updates
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows Defender\\SignatureUpdates\s*=\s*0',  # Disable Defender Signature updates
+
+# Disabling Windows Update
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoWindowsUpdate\s*=\s*1',  # Disable Windows Update
+
+# Add backdoor persistence for a malicious service
+r'HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\\S+',  # Adding malicious service (can include backdoor persistence)
+
+# Elevate privilege by adding user to administrators group
+r'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\ShowAdminDems\s*=\s*1',  # Show admin permissions
+
+# Add malicious proxy or DNS configuration
+r'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ProxyServer\s*=\s*\S+',  # Set proxy to a malicious address
+
+# Disabling Windows Event Log
+r'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\\S+',  # Event log modification (disable logs)
+
+# Change shell to malicious executable (possible backdoor)
+r'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell\s*=\s*\S+',  # Change Windows Shell to malicious executable
+
+# Malicious auto-elevated scheduled task
+r'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\\S+',  # Malicious scheduled task registry key
+
+# Disable Windows Firewall via registry
+r'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MpsSvc\\Start\s*=\s*4',  # Disable Windows Firewall by setting service to disabled
+
+# Disable antivirus protection for third-party AV
+r'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisableAntiSpyware\s*=\s*1',  # Disable third-party AV
+
+# Disable automatic lock screen (persistent remote access)
+r'HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\InactivityTimeoutSecs\s*=\s*0',  # Disable automatic lock screen
+
+# Disable logging of security events
+r'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\Security\\Start\s*=\s*4',  # Disable security event log
+
+
